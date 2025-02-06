@@ -1,6 +1,10 @@
+using System.Reflection;
+using ProjectName.ApiService.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
+builder.Services.AddSwaggerDocumentation($"{Assembly.GetExecutingAssembly().GetName().Name}.xml");
 
 // Add services to the container.
 
@@ -16,6 +20,7 @@ app.MapDefaultEndpoints();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwaggerDocumentation();
 }
 
 app.UseHttpsRedirection();
