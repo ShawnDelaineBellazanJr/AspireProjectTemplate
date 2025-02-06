@@ -1,6 +1,5 @@
 using System.Reflection;
 using ProjectName.ApiService.Configurations;
-using ProjectName.ServiceDefaults.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
